@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ali Raza | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-somehash" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    /* Global styles */
+    :root {
+      --bg: #f3f7ff;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #4b5563;
+      --green: #10b981;
+      --blue: #3b82f6;
+      --shadow: 0 9px 32px rgba(15, 23, 42, 0.08);
+      --nav-bg: #111827;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: 'Roboto', sans-serif;
+      
+          background: linear-gradient(272deg, #4f4f80, #000000);
+
+      color: var(--text);
+      line-height: 1.6;
+      display: flex;
+      justify-content: center;
+      /* padding: 2rem 1rem; */
+    }
+
+    .page {
+      width: 100%;
+      /* display: grid; */
+      /* grid-template-columns: 1fr 0.12fr; */
+      /* gap: 1.2rem; */
+      position: relative; 
+          display: flex;
+   
+    position: relative;
+    justify-content: center;
+
+    }
+
+    .logo {
+      font-weight: 700;
+      color: #fafafb;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      margin-bottom: 1.2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      
+    }
+
+  
+
+    .hero {
+      /* border-radius: 18px;
+      box-shadow: var(--shadow); */
+      /* border: 1px solid rgba(15, 23, 42, 0.05);  */
+      padding : 8rem 23rem 11rem 5rem;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      margin-bottom: 0.8rem;
+      color: #f4f6f8;
+      letter-spacing: -0.02em;
+    }
+
+    .hero p {
+      max-width: 58ch;
+      color: white;
+      margin-bottom: 1.45rem;
+      font-size: clamp(0.9rem, 2vw, 1.08rem);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 12px;
+      padding: 0.65rem 1.15rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s ease, filter 0.2s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.03);
+    }
+
+    .btn-download {
+      background: var(--green);
+      color: white;
+    }
+
+    .btn-projects {
+      background: var(--blue);
+      color: white;
+    }
+
+    .right-nav {
+      background: var(--nav-bg);
+      border-radius: 18px;
+      color: white;
+      max-height: 30rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 1rem;
+    padding: 1rem 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+          width: 5rem;
+    margin: 2rem;
+
+    }
+
+    .nav-list {
+      list-style: none;
+      display: grid;
+      gap: 1.65rem;
+      align-items: center;
+      justify-items: center;
+    }
+
+    .nav-list li {
+        width: 2.6rem;
+    height: 2.7rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+    font-size: 1.5rem;
+    }
+
+    .nav-list li a {
+      color: #fff;
+      width: 100%;
+      height: 100%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+
+    .nav-list li:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-list li.active {
+      background: rgba(59, 130, 246, 0.15);
+      color: #cbd5e1;
+    }
+
+    .section {
+      margin-top: 4rem;
+      padding-top: 0.2rem;
+    }
+
+    .section h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.45rem;
+      letter-spacing: 0.02em;
+    }
+
+    .section p {
+      color: #4b5563;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+      max-width: 48ch;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .skill-pill {
+      font-size: 0.8rem;
+      background: #e2e8f0;
+      color: #1f2937;
+      border-radius: 999px;
+      border: 1px solid #cbd5e1;
+      padding: 0.25rem 0.7rem;
+    }
+
+    @media (max-width: 900px) {
+      .page {
+        grid-template-columns: 1fr;
+      }
+
+      .right-nav {
+        position: static;
+        width: 100%;
+        min-height: auto;
+        margin-top: 0.8rem;
+      }
+
+      .hero {
+        padding: 1.4rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem 0.5rem;
+      }
+
+      .hero {
+        padding: 1.2rem;
+      }
+
+      .actions {
+        width: 100%;
+      }
+
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+    .cover{
+       /* background-color: #07087cd9; */
+      width: 253px;
+    height: 332px;
+    position: relative;
+    top: 85px;
+    right: 10rem;
+    text-align: center;
+    align-items: center;
+
+    border-radius: 96px;
+    overflow: hidden;
+    }
+    .bgimage{
+      background: linear-gradient(272deg,   #000000,#4f4f80);
+
+   width: 209px;
+    height: 330px;
+    border-radius: 96px;
+    border: 6px solid #f5f5f7d9;
+    /* margin-left: 3px; */
+    }
+    img{
+    
+           /* display: block; */
+    height: auto;
+    /* width: 100%; */
+    /* border-radius: 96px; */
+    /* border: 17px solid #0d0e85d9; */
+    /* margin-left: 3px; */
+    /* border-radius: 97px 46px 77px 24px; */
+     position: absolute;
+    bottom: -325px;
+    left: -52px;
+    /* z-index: 999; */
+    object-fit: cover;
+
+
+    }
+  </style>
+</head>
+<body>
+  <!-- Main one-page layout container -->
+  <div class="page">
+      <main class="hero">
+        <div class="logo"><i class="fa-solid fa-fire" style="color:#f9fafc;"></i> Portfolio</div>
+      <!-- Top-left logo area -->
+
+      <!-- Hero introduction section -->
+      <section id="home">
+        <h1>Hi, I'm Ali Raza</h1>
+        <p>
+          I build clean and modern digital experiences using UI design and frontend development. I love
+          transforming ideas into elegant websites with thoughtful interactions.
+        </p>
+
+        <!-- Buttons for CTA actions -->
+        <div class="actions">
+          <a class="btn btn-download" href="/Ali-Raza-CV.pdf" download>
+            <i class="fa-solid fa-download"></i> Download CV
+          </a>
+          <a class="btn btn-projects" href="#projects">
+            <i class="fa-solid fa-folder-open"></i> Projects
+          </a>
+        </div>
+      </section>
+
+
+      <!-- Additional one-page sections for smooth scrolling anchors -->
+      <!-- <section id="about" class="section">
+        <h2>About</h2>
+        <p>
+          I am a passionate front-end developer focused on responsive UI, accessibility, and performance.
+          My workflow blends design thinking with practical HTML/CSS architecture.
+        </p>
+        <div class="skills">
+          <span class="skill-pill">HTML</span>
+          <span class="skill-pill">CSS</span>
+          <span class="skill-pill">Responsive Design</span>
+          <span class="skill-pill">UI Design</span>
+        </div>
+      </section>
+
+      <section id="projects" class="section">
+        <h2>Projects</h2>
+        <p>
+          Latest projects include landing pages, portfolio sites, and component-driven interfaces.
+          Everything is built with minimal code and modern style.
+        </p>
+      </section>
+
+      <section id="contact" class="section">
+        <h2>Contact</h2>
+        <p>
+          I’m currently available for freelance and contract opportunities. Reach me at
+          <strong>ali@example.com</strong>.
+        </p>
+      </section> -->
+    </main>
+    <section class="cover">
+      <div class="bgimage">
+        <img src="img\IMG-20251130-WA0004_1_1-removebg-preview.png" alt="">
+      </div>
+    </section>
+
+    <!-- Right side fixed vertical nav menu -->
+    <nav class="right-nav">
+      <ul class="nav-list">
+        <li class="active"><a href="#home" aria-label="Home"><i class="fa-solid fa-house"></i></a></li>
+        <li><a href="#about" aria-label="About"><i class="fa-solid fa-user"></i></a></li>
+        <li><a href="#projects" aria-label="Projects"><i class="fa-solid fa-code"></i></a></li>
+        <li><a href="#experience" aria-label="Experience"><i class="fa-solid fa-briefcase"></i></a></li>
+        <li><a href="#contact" aria-label="Contact"><i class="fa-solid fa-address-card"></i></a></li>
+      </ul>
+    </nav>
+  </div>
+</body>
+</html>
